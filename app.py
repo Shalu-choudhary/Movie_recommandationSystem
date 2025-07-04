@@ -98,8 +98,19 @@ if st.button("🎯 Show Recommendations"):
     else:
         recommendations, matched = get_recommendations(movie_input, movies_df, similarity_matrix)
         if matched:
-            st.success(f"Top 20 movies similar to **{matched}**:")
-            for i, movie in enumerate(recommendations, 1):
+           st.markdown(f"""
+    <div style='
+        background-color: #d1e7dd;
+        color: #0f5132;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 600;'>
+        ✅ Top 20 movies similar to <strong>{matched}</strong>:
+    </div>
+    """, unsafe_allow_html=True)
+        for i, movie in enumerate(recommendations, 1):
                 st.markdown(f'<div class="rec-box">🍿 {i}. {movie}</div>', unsafe_allow_html=True)
         else:
             st.error("No similar movie found. Try a different title.")
