@@ -10,7 +10,7 @@ st.set_page_config(page_title="🎬 Movie Recommender", page_icon="🍿", layout
 # --- Improved Styling ---
 st.markdown("""
     <style>
-    body {
+    .stApp {
         background-color: #f4f4f4;
     }
     .title {
@@ -27,17 +27,23 @@ st.markdown("""
         margin-bottom: 30px;
     }
     .rec-box {
-        background-color: white;
+        background-color: #ffffff;
+        color: #111111;
         padding: 15px 25px;
         border-radius: 12px;
         margin: 8px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        transition: 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         font-size: 17px;
+        font-weight: 500;
     }
     .rec-box:hover {
-        background-color: #fce4ec;
+        background-color: #f9f0ff;
         transform: scale(1.01);
+    }
+    input, .stTextInput > div > div > input {
+        color: #111 !important;
+        background-color: #fff !important;
+        border: 1px solid #ccc !important;
     }
     .footer {
         text-align: center;
@@ -47,7 +53,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
 # --- Header ---
 st.markdown('<div class="title">🎬 Movie Recommendation System</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Type a movie you love and discover similar ones instantly 🍿</div>', unsafe_allow_html=True)
